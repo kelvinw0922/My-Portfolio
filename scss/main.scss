@@ -1,6 +1,116 @@
 $primary-color: #444;
+$secondary-color: #eece1a;
+$image-path: "../img";
+$home-image-display: true;
+$home-image: url(#{$image-path}/home_image.jpg);
+$home-image-opacity: 0.9;
+
+// Retrun rootpath
+@function get-path($image-path) {
+  @return $image-path;
+}
+
+// Transition's default setup
+@mixin easeOut {
+  transition: all 1s ease-out;
+}
+
+// Background image
+@mixin background {
+  @if $home-image-display {
+    &#bg-image {
+      background: $home-image;
+      background-attachment: fixed;
+      background-size: cover;
+
+      .overlay {
+        // absoulte: to cover the entire page, from top and right at 0 with 100% of width and height
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($primary-color, $home-image-opacity);
+        z-index: -1;
+      }
+    }
+  }
+}
+
+// Include the padding and the border in an element's total width and height
+* {
+  box-sizing: border-box;
+}
 
 body {
+  @include background;
   background: $primary-color;
   color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+// Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 800;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(lighten($primary-color, 4), 0.5);
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+// Main
+main {
+  padding: 4rem;
+  height: 100%;
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+    }
+
+    i {
+      @include easeOut();
+
+      &:hover {
+        transform: scale(1.5);
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &#home {
+    overflow: hidden;
+    h1 {
+      margin-top: 20vh;
+    }
+  }
 }
