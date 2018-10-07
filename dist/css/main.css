@@ -1,3 +1,59 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 1s ease-out; }
+  .menu-btn .btn-line {
+    width: 1.8rem;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #fff;
+    transition: all 1s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      width: 2rem; }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6.5px);
+      width: 2rem; }
+
+.var-highlight {
+  color: #c0ad60; }
+
+.string-highlight {
+  color: rgba(253, 149, 90, 0.8); }
+
+#typewriter {
+  font-size: 1.2em;
+  margin-top: 30vh;
+  font-family: "Courier New"; }
+  #typewriter:after {
+    content: "|";
+    animation: blink 500ms linear infinite alternate; }
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes blink {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 * {
   box-sizing: border-box; }
 
@@ -52,6 +108,10 @@ header {
 main {
   padding: 4rem;
   height: 100%; }
+  main .row {
+    display: flex; }
+    main .row .col-md-6 {
+      width: 50%; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -65,3 +125,6 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+.coding-display {
+  margin-top: 20vh; }
