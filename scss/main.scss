@@ -73,9 +73,21 @@ main {
     i {
       @include easeOut();
 
-      &:hover {
+      &#twitter:hover {
         transform: scale(1.5);
-        color: $secondary-color;
+        color: $twitter-color;
+      }
+      &#facebook:hover {
+        transform: scale(1.5);
+        color: $facebook-color;
+      }
+      &#linkedin:hover {
+        transform: scale(1.5);
+        color: $linkedin-color;
+      }
+      &#github:hover {
+        transform: scale(1.5);
+        color: $github-color;
       }
     }
   }
@@ -92,4 +104,9 @@ main {
 
 .coding-display {
   margin-top: 20vh;
+  visibility: visible;
+
+  &.show {
+    visibility: hidden;
+  }
 }

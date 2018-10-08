@@ -5,6 +5,7 @@ const menu = $(".menu");
 const menuNavbar = $(".menu-navbar");
 const menuProfile = $(".menu-profile");
 const navbarItem = $(".navbar-item");
+const codingDisplay = $(".coding-display");
 
 // Set Initial State of Menu
 let showMenu = false;
@@ -20,7 +21,7 @@ function toggleMenu() {
     navbarItem.each(function() {
       $(this).addClass("show");
     });
-
+    codingDisplay.addClass("show");
     showMenu = true;
   } else {
     menuBtn.removeClass("close");
@@ -30,7 +31,7 @@ function toggleMenu() {
     navbarItem.each(function() {
       $(this).removeClass("show");
     });
-
+    codingDisplay.removeClass("show");
     showMenu = false;
   }
 }
