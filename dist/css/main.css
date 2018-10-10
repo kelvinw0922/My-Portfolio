@@ -28,7 +28,7 @@
   left: 55%;
   height: 100vh;
   width: 45%;
-  opacity: 0.7;
+  opacity: 0.9;
   visibility: hidden;
   display: flex;
   flex-flow: column wrap;
@@ -136,13 +136,14 @@ body {
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5; }
+  line-height: 1.5;
+  overflow: hidden; }
   body#bg-image {
     background: url(../img/home_image.jpg);
     background-attachment: fixed;
     background-size: cover; }
     body#bg-image .overlay {
-      position: absolute;
+      position: fixed;
       top: 0;
       right: 0;
       width: 100%;
@@ -180,7 +181,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%; }
+  min-height: calc(100vh - 60px); }
   main .row {
     display: flex; }
     main .row .col-md-6 {
@@ -213,3 +214,115 @@ main {
   visibility: visible; }
   .coding-display.show {
     visibility: hidden; }
+
+.container {
+  padding: 2rem; }
+
+.about-me {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: "profile-picture info-box info-box" "work1 work2 work3";
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20px; }
+  .about-me .profile-picture {
+    grid-area: profile-picture;
+    display: block;
+    background: url("../img/profile_picture.jpg");
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid #eece1a;
+    margin: auto; }
+  .about-me .info-box {
+    grid-area: info-box; }
+    .about-me .info-box .info-bio {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #eece1a;
+      padding-bottom: 5%; }
+  .about-me .work {
+    background: #515151;
+    border-bottom: 3px solid #eece1a;
+    padding: 2rem; }
+  .about-me .work1 {
+    grid-area: work1; }
+  .about-me .work2 {
+    grid-area: work2; }
+  .about-me .work3 {
+    grid-area: work3; }
+
+#main-footer {
+  text-align: center;
+  height: 60px;
+  background: #2b2b2b;
+  padding: 1rem; }
+
+@media screen and (min-width: 501px) and (max-width: 768px) {
+  main {
+    text-align: center;
+    align-items: center; }
+    main .row {
+      display: flex;
+      flex-flow: column; }
+      main .row .col-md-6 {
+        height: 50%;
+        width: 100%; }
+    main .coding-display {
+      margin-top: 0px; }
+      main .coding-display #typewriter {
+        margin-top: 10%;
+        padding-right: 20%;
+        float: right; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+    main .sm-heading {
+      margin-top: 5%; }
+    main#home h1 {
+      margin-top: 10vh; }
+  .menu {
+    left: 0;
+    width: 100%;
+    opacity: 1; }
+    .menu .menu-navbar {
+      margin-top: 5%; }
+  .about-me {
+    grid-template-areas: "profile-picture" "info-box" "work1" "work2" "work3";
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main {
+    padding: 0;
+    text-align: center;
+    align-items: center; }
+    main .row {
+      display: flex;
+      flex-flow: column; }
+      main .row .col-md-6 {
+        height: 50%;
+        width: 100%; }
+    main .coding-display {
+      margin-top: 0px; }
+      main .coding-display #typewriter {
+        margin-top: 10%;
+        float: right;
+        padding-right: 10%; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+      font-size: 4rem; }
+    main .sm-heading {
+      font-size: 1.5rem; }
+    main#home h1 {
+      margin-top: 10vh; }
+  .menu {
+    left: 0;
+    width: 100%;
+    opacity: 1; }
+    .menu .menu-navbar {
+      margin-top: 3%; }
+    .menu .nav-link {
+      font-size: 25px; }
+  .about-me {
+    grid-template-areas: "profile-picture" "info-box" "work1" "work2" "work3";
+    grid-template-columns: repeat(1, 1fr); } }

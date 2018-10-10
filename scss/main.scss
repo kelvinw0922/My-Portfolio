@@ -16,6 +16,7 @@ body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
+  overflow: hidden;
 }
 
 // Headings
@@ -54,7 +55,8 @@ header {
 // Main
 main {
   padding: 4rem;
-  height: 100%;
+  // Calculate the height with the footer sticking at the bottom
+  min-height: calc(100vh - 60px);
 
   .row {
     display: flex;
@@ -110,3 +112,72 @@ main {
     visibility: hidden;
   }
 }
+
+// About Me
+
+.container {
+  padding: 2rem;
+}
+
+.about-me {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "profile-picture info-box info-box"
+    "work1 work2 work3";
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20px;
+
+  // Profile-picture
+  .profile-picture {
+    grid-area: profile-picture;
+    display: block;
+    background: url("#{$image_path}/profile_picture.jpg");
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid $secondary-color;
+    margin: auto;
+  }
+
+  // Info
+  .info-box {
+    grid-area: info-box;
+    // Info-Bio
+    .info-bio {
+      font-size: 2rem;
+      font-weight: 500;
+      color: $secondary-color;
+      padding-bottom: 5%;
+    }
+  }
+
+  // Work
+  .work {
+    background: lighten($primary-color, 5);
+    border-bottom: 3px solid $secondary-color;
+    padding: 2rem;
+  }
+
+  .work1 {
+    grid-area: work1;
+  }
+
+  .work2 {
+    grid-area: work2;
+  }
+
+  .work3 {
+    grid-area: work3;
+  }
+}
+
+// Footer - #main-footer
+#main-footer {
+  text-align: center;
+  height: 60px;
+  background: darken($primary-color, 10);
+  padding: 1rem;
+}
+
+@import "mobile";
