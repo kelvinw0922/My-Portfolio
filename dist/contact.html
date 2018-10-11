@@ -5,11 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Contact Me</title>
 </head>
 
 <body>
+    <div class="overlay"></div>
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+        <nav class="menu">
+            <div class="menu-profile"></div>
+            <ul class="menu-navbar">
+                <li class="navbar-item">
+                    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="about.html" class="nav-link"><i class="fas fa-question-circle"></i> About
+                        Me</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="projects.html" class="nav-link"><i class="fas fa-project-diagram"></i> My
+                        Projects</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="vacations.html" class="nav-link"><i class="fas fa-globe"></i> My
+                        Vacations</a>
+                </li>
+                <li class="navbar-item current">
+                    <a href="contact.html" class="nav-link"><i class="fas fa-inbox"></i> Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <h1 class="lg-heading">
+            Contact <span class="text-secondary">Me</span>
+        </h1>
+        <h2 class="sm-heading">
+            Here is how you can contact me...
+        </h2>
+        <div class="contact-boxes">
+            <div class="contact-info">
+                <a href="https://www.google.com/maps/place/15520+Lujon+St,+La+Puente,+CA+91745/@34.0023422,-117.9744755,17z/data=!3m1!4b1!4m5!3m4!1s0x80c2d42d51ab8b21:0xd4c7e6a6a759afaf!8m2!3d34.0023422!4d-117.9722868"
+                    target="_blank">
+                    <div class="address-map"></div>
+                </a>
+                <div class="contact">
+                    <span class="text-secondary"><i class="fas fa-at"></i> Email: </span>kelvinwong0922@gmail.com
+                </div>
+                <div class="contact">
+                    <span class="text-secondary"><i class="fas fa-phone"></i> Phone: </span>(626) 322-5180
+                </div>
+                <div class="contact">
+                    <span class="text-secondary"><i class="fas fa-address-card"></i> Address: </span>15520 Lujon
+                    Street, Hacienda Heights, CA 91745
+                </div>
+            </div>
+            <div class="contact-form">
+                <h2 class="sm-heading"><i class="fas fa-comment-alt"></i> Send Me Any Feedback</h2>
+                <form action="mailto:kelvinwong0922@gmail.com?subject=Email from Contact Me Page" method="POST" enctype="text/plain">
+                    <label for="fname">Your Name*</label>
+                    <input type="text" name="name" placeholder="..." required>
+                    <label for="fname">Your Email*</label>
+                    <input type="email" name="email" placeholder="..." required>
+                    <label for="fname">Subject*</label>
+                    <input type="text" name="subject" placeholder="..." required>
+                    <label for="fname">Your Message*</label>
+                    <textarea name="message" placeholder="..."></textarea>
+
+                    <input type="image" value="Submit" src="img/submit-5.gif" class="submit-btn">
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        Copyright &copy; 2018
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

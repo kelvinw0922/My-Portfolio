@@ -12,6 +12,21 @@
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  // Contact Me Page
+  .contact-boxes {
+    display: flex;
+    flex-flow: column;
+
+    .contact-info {
+      width: 100%;
+    }
+
+    .contact-form {
+      margin-top: 50px;
+      width: 100%;
+    }
+  }
 }
 
 // Tablets & Small Laptops
@@ -86,6 +101,27 @@
   // Projects Page
   .projects {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Contact Me Page
+  .contact-boxes {
+    display: flex;
+    flex-flow: column;
+    align-self: center;
+    justify-items: center;
+
+    .contact-info {
+      width: 100%;
+    }
+
+    .contact-form {
+      width: 100%;
+      margin-top: 50px;
+
+      form {
+        text-align: left;
+      }
+    }
   }
 }
 
@@ -174,5 +210,40 @@
   // Projects Page
   .projects {
     grid-template-columns: 1fr;
+  }
+
+  // Contact Me Page
+  .contact-boxes {
+    display: flex;
+    flex-flow: column;
+    align-self: center;
+    justify-items: center;
+
+    .contact-info {
+      width: 100%;
+
+      .address-map {
+        width: 200px;
+        height: 200px;
+      }
+
+      .contact {
+        word-wrap: break-word;
+      }
+    }
+
+    .contact-form {
+      width: 100%;
+      margin-top: 50px;
+
+      form {
+        text-align: left;
+
+        input[type="text"],
+        input[type="email"] {
+          width: 100%;
+        }
+      }
+    }
   }
 }

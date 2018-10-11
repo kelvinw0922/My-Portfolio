@@ -179,7 +179,7 @@ header {
   color: #eece1a; }
 
 main {
-  padding: 6rem;
+  padding: 5rem;
   min-height: calc(100vh - 60px); }
   main .row {
     display: flex; }
@@ -257,6 +257,7 @@ main {
     font-weight: 700; }
   .projects img {
     width: 100%;
+    height: calc(100% - 2 * 40px - 16px);
     border: 3px solid white; }
     .projects img:hover {
       opacity: 0.5;
@@ -266,6 +267,7 @@ main {
 .btn, .btn-dark, .btn-light {
   display: block;
   padding: 0.5rem 1rem;
+  height: 40px;
   border: 0;
   margin-bottom: 0.3rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
@@ -280,6 +282,55 @@ main {
   background: #c4c4c4;
   color: black; }
 
+.contact-boxes {
+  display: flex;
+  width: 100%; }
+  .contact-boxes .contact-info {
+    width: 50%; }
+    .contact-boxes .contact-info .contact {
+      padding: 1rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 500; }
+    .contact-boxes .contact-info .address-map {
+      width: 500px;
+      height: 500px;
+      background: url("../img/address.JPG");
+      background-position: 20% 50%;
+      border-radius: 50%;
+      border: 3px solid #eece1a;
+      margin: auto; }
+  .contact-boxes .contact-form {
+    width: 50%; }
+    .contact-boxes .contact-form form {
+      padding: 2rem; }
+      .contact-boxes .contact-form form input[type="text"],
+      .contact-boxes .contact-form form input[type="email"],
+      .contact-boxes .contact-form form textarea {
+        padding: 0.2rem;
+        box-sizing: border-box;
+        margin-bottom: 16px;
+        border-radius: 4px;
+        border: 1px solid #eece1a; }
+      .contact-boxes .contact-form form label {
+        font: 0.75em "MuseoSlab500", Georgia, Times, serif;
+        text-transform: uppercase;
+        text-shadow: #fff 0 1px 0;
+        width: 100%; }
+      .contact-boxes .contact-form form input[type="text"],
+      .contact-boxes .contact-form form input[type="email"] {
+        display: block;
+        width: 300px;
+        background-color: #515151; }
+      .contact-boxes .contact-form form textarea {
+        height: 200px;
+        width: 100%;
+        resize: vertical;
+        background-color: #515151; }
+      .contact-boxes .contact-form form .submit-btn {
+        opacity: 0.8;
+        border-radius: 10px; }
+
 #main-footer {
   text-align: center;
   height: 60px;
@@ -293,7 +344,15 @@ main {
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); }
+  .contact-boxes {
+    display: flex;
+    flex-flow: column; }
+    .contact-boxes .contact-info {
+      width: 100%; }
+    .contact-boxes .contact-form {
+      margin-top: 50px;
+      width: 100%; } }
 
 @media screen and (min-width: 501px) and (max-width: 768px) {
   body {
@@ -330,7 +389,19 @@ main {
     grid-template-areas: "profile-picture" "info-box" "work1" "work2" "work3";
     grid-template-columns: 1fr; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  .contact-boxes {
+    display: flex;
+    flex-flow: column;
+    align-self: center;
+    justify-items: center; }
+    .contact-boxes .contact-info {
+      width: 100%; }
+    .contact-boxes .contact-form {
+      width: 100%;
+      margin-top: 50px; }
+      .contact-boxes .contact-form form {
+        text-align: left; } }
 
 @media screen and (max-width: 500px) {
   body {
@@ -376,4 +447,24 @@ main {
       margin: auto;
       background: url("../img/sm_profile_picture.jpg"); }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .contact-boxes {
+    display: flex;
+    flex-flow: column;
+    align-self: center;
+    justify-items: center; }
+    .contact-boxes .contact-info {
+      width: 100%; }
+      .contact-boxes .contact-info .address-map {
+        width: 200px;
+        height: 200px; }
+      .contact-boxes .contact-info .contact {
+        word-wrap: break-word; }
+    .contact-boxes .contact-form {
+      width: 100%;
+      margin-top: 50px; }
+      .contact-boxes .contact-form form {
+        text-align: left; }
+        .contact-boxes .contact-form form input[type="text"],
+        .contact-boxes .contact-form form input[type="email"] {
+          width: 100%; } }
