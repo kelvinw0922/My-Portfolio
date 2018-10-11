@@ -14,6 +14,14 @@ $home-image-opacity: 0.9;
   @return $image-path;
 }
 
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return black; //Lighter background; return black color
+  } @else {
+    @return white; //Darker background; return white color
+  }
+}
+
 // Transition's default setup
 @mixin easeOut {
   transition: all 1s ease-out;

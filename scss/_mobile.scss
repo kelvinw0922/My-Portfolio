@@ -1,13 +1,26 @@
 // Widescreens
 @include mediaXL {
+  // Projects Page
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 // Desktops & Laptops
 @include mediaLg {
+  // Projects Page
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 // Tablets & Small Laptops
 @include mediaMd {
+  // Body's overflow
+  body {
+    overflow: visible;
+  }
+
   // Main element
   main {
     text-align: center;
@@ -69,13 +82,23 @@
       "work3";
     grid-template-columns: 1fr;
   }
+
+  // Projects Page
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 // Smartphones
 @include mediaSm {
+  // Body's overflow
+  body {
+    overflow: visible;
+  }
+
   // Main element
   main {
-    padding: 0;
+    padding: 3rem;
     text-align: center;
     align-items: center;
 
@@ -139,5 +162,17 @@
       "work2"
       "work3";
     grid-template-columns: repeat(1, 1fr);
+
+    .profile-picture {
+      width: 250px;
+      height: 250px;
+      margin: auto;
+      background: url("#{$image_path}/sm_profile_picture.jpg");
+    }
+  }
+
+  // Projects Page
+  .projects {
+    grid-template-columns: 1fr;
   }
 }

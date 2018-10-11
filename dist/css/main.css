@@ -136,8 +136,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5;
-  overflow: hidden; }
+  line-height: 1.5; }
   body#bg-image {
     background: url(../img/home_image.jpg);
     background-attachment: fixed;
@@ -180,7 +179,7 @@ header {
   color: #eece1a; }
 
 main {
-  padding: 4rem;
+  padding: 6rem;
   min-height: calc(100vh - 60px); }
   main .row {
     display: flex; }
@@ -215,9 +214,6 @@ main {
   .coding-display.show {
     visibility: hidden; }
 
-.container {
-  padding: 2rem; }
-
 .about-me {
   display: grid;
   grid-gap: 30px;
@@ -251,13 +247,57 @@ main {
   .about-me .work3 {
     grid-area: work3; }
 
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px; }
+  .projects a.btn-dark,
+  .projects a.btn-light {
+    text-align: center;
+    font-weight: 700; }
+  .projects img {
+    width: 100%;
+    border: 3px solid white; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #eece1a;
+      transition: all 1s ease-out; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #eece1a;
+    color: black; }
+
+.btn-dark {
+  background: black;
+  color: white; }
+
+.btn-light {
+  background: #c4c4c4;
+  color: black; }
+
 #main-footer {
   text-align: center;
   height: 60px;
   background: #2b2b2b;
-  padding: 1rem; }
+  padding: 1rem;
+  font-weight: 400; }
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (min-width: 501px) and (max-width: 768px) {
+  body {
+    overflow: visible; }
   main {
     text-align: center;
     align-items: center; }
@@ -288,11 +328,15 @@ main {
       margin-top: 5%; }
   .about-me {
     grid-template-areas: "profile-picture" "info-box" "work1" "work2" "work3";
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
+  body {
+    overflow: visible; }
   main {
-    padding: 0;
+    padding: 3rem;
     text-align: center;
     align-items: center; }
     main .row {
@@ -325,4 +369,11 @@ main {
       font-size: 25px; }
   .about-me {
     grid-template-areas: "profile-picture" "info-box" "work1" "work2" "work3";
-    grid-template-columns: repeat(1, 1fr); } }
+    grid-template-columns: repeat(1, 1fr); }
+    .about-me .profile-picture {
+      width: 250px;
+      height: 250px;
+      margin: auto;
+      background: url("../img/sm_profile_picture.jpg"); }
+  .projects {
+    grid-template-columns: 1fr; } }
