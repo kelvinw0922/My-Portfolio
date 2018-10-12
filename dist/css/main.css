@@ -247,22 +247,48 @@ main {
   .about-me .work3 {
     grid-area: work3; }
 
-.projects {
+.projects, .vacations {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px; }
-  .projects a.btn-dark,
-  .projects a.btn-light {
+  .projects a.btn-dark, .vacations a.btn-dark,
+  .projects a.btn-light,
+  .vacations a.btn-light {
     text-align: center;
     font-weight: 700; }
-  .projects img {
+  .projects img, .vacations img {
     width: 100%;
     height: calc(100% - 2 * 40px - 16px);
     border: 3px solid white; }
-    .projects img:hover {
+    .projects img:hover, .vacations img:hover {
       opacity: 0.5;
       border-color: #eece1a;
       transition: all 1s ease-out; }
+
+.vacations .album-title {
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 2rem;
+  font-family: "Lucida Bright", Georgia, serif;
+  font-style: italic;
+  color: #eece1a;
+  font-weight: 500; }
+
+.album {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: 100px;
+  margin-left: 100px; }
+  .album img {
+    width: 100%;
+    border: white 3px solid; }
+    .album img:hover {
+      transform: scale(1.5);
+      transition: 2s; }
 
 .btn, .btn-dark, .btn-light {
   display: block;
@@ -339,11 +365,11 @@ main {
   font-weight: 400; }
 
 @media screen and (min-width: 1171px) {
-  .projects {
+  .projects, .vacations {
     grid-template-columns: repeat(4, 1fr); } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
-  .projects {
+  .projects, .vacations {
     grid-template-columns: repeat(3, 1fr); }
   .contact-boxes {
     display: flex;
@@ -388,7 +414,7 @@ main {
   .about-me {
     grid-template-areas: "profile-picture" "info-box" "work1" "work2" "work3";
     grid-template-columns: 1fr; }
-  .projects {
+  .projects, .vacations {
     grid-template-columns: repeat(2, 1fr); }
   .contact-boxes {
     display: flex;
@@ -446,7 +472,7 @@ main {
       height: 250px;
       margin: auto;
       background: url("../img/sm_profile_picture.jpg"); }
-  .projects {
+  .projects, .vacations {
     grid-template-columns: 1fr; }
   .contact-boxes {
     display: flex;
