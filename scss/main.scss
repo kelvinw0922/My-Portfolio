@@ -1,10 +1,49 @@
 @import "config";
 @import "menu";
 @import "coding-display";
+//import check mark;
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 // Include the padding and the border in an element's total width and height
 * {
   box-sizing: border-box;
+}
+
+// Bounce Animation
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+  transform-origin: center bottom;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
 }
 
 // Body
@@ -28,6 +67,8 @@ h3 {
 
   &.lg-heading {
     font-size: 6rem;
+    @extend .bounce;
+    @extend .animated;
   }
 
   &.sm-heading {
@@ -141,10 +182,22 @@ main {
     grid-area: info-box;
     // Info-Bio
     .info-bio {
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 500;
       color: $secondary-color;
-      padding-bottom: 5%;
+      text-decoration: underline;
+      @extend .bounce;
+      @extend .animated;
+    }
+
+    // Who-Am-I section
+    .who-am-I {
+      margin-bottom: 2rem;
+      padding: 0.4rem 0.8rem;
+      background: rgba(lighten($primary-color, 4), 0.5);
+      font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace;
+      font-size: 1.2rem;
+      font-weight: 100;
     }
   }
 
@@ -166,6 +219,83 @@ main {
   .work3 {
     grid-area: work3;
   }
+
+  h3 {
+    font-size: 2rem;
+    color: $secondary-color;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  // About-Me Title
+  .aboutme-title {
+    @extend .bounce;
+    @extend .animated;
+  }
+
+  // Skill-List
+  .skill-list {
+    columns: 2;
+    // For Safari3 and Chrome
+    -webkit-columns: 2;
+    // For Firefox
+    -moz-columns: 2;
+    list-style-type: none;
+
+    .skill-item {
+      font-size: 1.2rem;
+      font-family: Georgia, Times, "Times New Roman", serif;
+      font-style: italic;
+      &:before {
+        content: "\2713";
+        padding: 10px;
+        color: lightgreen;
+      }
+    }
+  }
+
+  // Experience
+  .experience {
+    padding: 1rem;
+    h4 {
+      margin: 0;
+    }
+
+    .time-spent {
+      float: right;
+      font-style: italic;
+    }
+
+    .experience-list {
+      padding-left: 1.5rem;
+
+      .experience-item {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.5rem;
+      }
+    }
+  }
+
+  // Hobby-List
+  .hobby-list {
+    columns: 1;
+    // For Safari3 and Chrome
+    -webkit-columns: 1;
+    // For Firefox
+    -moz-columns: 1;
+    list-style-type: none;
+    text-align: center;
+
+    .hobby-item {
+      font-size: 1.5rem;
+      padding: 0.5rem 0.5rem;
+      font-weight: 400;
+      font-family: Georgia, Times, "Times New Roman", serif;
+      font-style: italic;
+    }
+  }
 }
 
 // Work/Projects
@@ -173,6 +303,20 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px;
+
+  .project-title {
+    display: block;
+    text-align: center;
+    height: 10%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-family: "Lucida Bright", Georgia, serif;
+    font-style: italic;
+    color: $secondary-color;
+    font-weight: 500;
+    @extend .bounce;
+    @extend .animated;
+  }
 
   a.btn-dark,
   a.btn-light {
@@ -183,49 +327,13 @@ main {
   // Shrink the images within the projects
   img {
     width: 100%;
-    height: calc(100% - 2 * 40px - 16px);
+    height: calc(100% - 10% - 2 * 40px - 16px);
     border: 3px solid white;
 
     &:hover {
       opacity: 0.5;
       border-color: $secondary-color;
       @include easeOut;
-    }
-  }
-}
-
-// Vacations
-.vacations {
-  @extend .projects;
-
-  .album-title {
-    display: block;
-    text-align: center;
-    padding: 0.5rem;
-    font-size: 2rem;
-    font-family: "Lucida Bright", Georgia, serif;
-    font-style: italic;
-    color: $secondary-color;
-    font-weight: 500;
-  }
-}
-
-// Album
-.album {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 50px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-right: 100px;
-  margin-left: 100px;
-  img {
-    width: 100%;
-    border: white 3px solid;
-
-    &:hover {
-      transform: scale(1.5);
-      transition: 2s;
     }
   }
 }
@@ -279,6 +387,8 @@ main {
       border-radius: 50%;
       border: 3px solid $secondary-color;
       margin: auto;
+      @extend .bounce;
+      @extend .animated;
     }
   }
 
@@ -324,6 +434,12 @@ main {
       }
     }
   }
+}
+
+// KeyWord
+.key-word {
+  font-style: italic;
+  font-weight: bold;
 }
 
 // Footer - #main-footer

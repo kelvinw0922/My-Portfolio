@@ -122,8 +122,8 @@
 }
 
 // Delay each navbar-item slide in by 0.2s
-@for $x from 1 through 5 {
+@for $x from 1 through 4 {
   .navbar-item:nth-child(#{$x}) {
-    transition-delay: $x * 0.2s;
+    transition-delay: $x * 0.25s;
   }
 }
